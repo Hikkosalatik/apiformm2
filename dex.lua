@@ -1,12 +1,3 @@
--- https://github.com/LorekeeperZinnia/Dex
-
---[[
-	Dex
-	Created by Moon
-	Modified for Infinite Yield
-
-	Dex is a debugging suite designed to help the user debug games and find any potential vulnerabilities.
-]]
 
 local nodes = {}
 local selection
@@ -1415,7 +1406,7 @@ local EmbeddedModules = {
 					for _, v in next, selection.List do
 						if v.Obj:IsA("LuaSourceContainer") and env.isViableDecompileScript(v.Obj) then
 							local success, source = pcall(env.decompile, v.Obj)
-							if not success or not source then source = ("-- DEX - %s failed to decompile %s"):format(env.executor, v.Obj.ClassName) end
+							if not success or not source then source = ("-- DEX - failed to decompile %s"):format(v.Obj.ClassName) end
 							local fileName = ("%i.%s.%s.Source.txt"):format(game.PlaceId, v.Obj.ClassName, env.parsefile(v.Obj.Name))
 							env.writefile(fileName, source)
 							task.wait(0.2)
