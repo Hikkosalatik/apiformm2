@@ -2256,7 +2256,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 	local StatusText
 
 	local OPTIONS = {
-		mode = "full",
+		mode = "scripts",
 		noscripts = false,
 		scriptcache = true,
 		-- decomptype = "",
@@ -2289,8 +2289,8 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		SaveCacheInterval = 0x1600 * 10,
 		ShowStatus = true,
-		KillAllScripts = true,
-		SafeMode = true,
+		KillAllScripts = false,
+		SafeMode = false,
 		ShutdownWhenDone = false,
 		AntiIdle = true,
 		Anonymous = false,
