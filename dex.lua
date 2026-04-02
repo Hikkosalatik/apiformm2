@@ -11846,7 +11846,7 @@ Main = (function()
         end
 
         getgenv().decompile = hicompile
-		env.decompile = missing("function", decompile) or hicompile or getgenv().decompile
+		env.decompile = hicompile or getgenv().decompile --missing("function", decompile) or 
 		env.isViableDecompileScript = function(obj)
 			if obj:IsA("ModuleScript") then
 				return true
