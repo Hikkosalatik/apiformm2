@@ -1,4 +1,5 @@
 
+
 local function string_find(s, pattern)
 	return string.find(s, pattern, nil, true)
 end
@@ -2247,7 +2248,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 	local currentstr, currentsize, totalsize, chunks = "", 0, 0, table.create(1)
 	local savebuffer, savebuffer_size = {}, 1
 	local header =
-		'<!-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw --><roblox version="4">'
+		'<!-- Saved --><roblox version="4">'
 
 	local StatusText
 
@@ -3492,7 +3493,9 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 											end
 										end
 
-										value = "-- Saved"
+										value = "-- Saved\n\n"
+											.. (hasLinkedSource and "-- Original Source: https://assetdelivery.roblox.com/v1/asset/?" .. (LinkedSource_type or "id") .. "=" .. (LinkedSource or LinkedSource_Url) .. "\n\n" or "")
+											.. value
 									end
 								end
 								value = XML_Descriptors.__PROTECTEDSTRING(value)
